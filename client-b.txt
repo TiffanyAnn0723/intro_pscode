@@ -2,3 +2,47 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+Task: Develop a mapping (walking) application to find a specific set location in a large warehouse store for a customer. The customer can forward, back, left or right. 
+
+Assume the store is structured like a grid with coordinates (x,y). The customer starts at a specified point (0,0) and must navigate to the target location (target_x,target_y).
+
+Things of note:
+There may be obstacles or blocked paths (aisles, shelves, etc.)
+
+Forward: When the customer needs to move up the y-axis: y increases.
+Backward: When the customer needs to move down the y axis: y decreases.
+Right: When the customer needs to move right along the x axis: x increases.
+Left: When the customer needs to move left along the x axis: x decreases.
+
+
+Start
+
+1. Initialize the warehouse grid with the starting position, obstacles, and the target location.
+2. Define the customer’s starting position as (x, y).
+3. Define the target position as (target_x, target_y).
+4. If multiple destinations exist, the system can store them in a list and navigate to each location in sequence.
+4. If obstacles exist:
+   a. Mark the obstacle locations on the grid so they cannot be passed through.
+   b. If an obstacle is encountered, the system should look for an alternate path by checking adjacent cells and moving around the obstacle.
+5. While the customer is not at the target position:
+   a. If the customer’s current x-coordinate is less than the target_x and the next move to the right is not blocked:
+       - Move right (x + 1).
+       - Print "Move right to position (x, y)".
+   b. If the customer’s current x-coordinate is greater than the target_x and the next move to the left is not blocked:
+       - Move left (x - 1).
+       - Print "Move left to position (x, y)".
+   c. If the customer’s current y-coordinate is less than the target_y and the next move forward is not blocked:
+       - Move forward (y + 1).
+       - Print "Move forward to position (x, y)".
+   d. If the customer’s current y-coordinate is greater than the target_y and the next move back is not blocked:
+       - Move back (y - 1).
+       - Print "Move back to position (x, y)".
+6. If the customer reaches the target location:
+   a. Print "You have arrived at your destination!".
+7. If more than one target destination, repeat steps 1-6 using next destinations coordinates and customer's new current coordinates.
+
+
+End
+
+
+
